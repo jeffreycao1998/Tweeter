@@ -5,6 +5,8 @@ nav {
   padding: 0 1.5em;
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
 }
 
 .nav-logo {

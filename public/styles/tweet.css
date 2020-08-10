@@ -1,0 +1,70 @@
+article.tweet-container {
+  min-height: 100px;
+  width: 100%;
+  border: 5px solid rgb(88, 72, 65);
+  margin-top: 40px;
+  font-weight: 300;
+}
+
+.tweet-container header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 20px;
+}
+
+.tweet-container header .username {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tweet-container header .username ion-icon {
+  margin-right: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+.tweet-container header .username p {
+  margin: 0;
+}
+
+.tweet-container header .tweeter-handler {
+  margin: 0;
+  font-size: 24px;
+  color: #f4f1ec;
+  font-weight: 400;
+}
+
+.tweet-container .tweet {
+  margin: 0 15px;
+  padding: 0px 20px 30px 20px;
+  border-bottom: 4px solid rgb(88, 72, 65);
+  font-size: 24px;
+  color: rgb(88, 72, 65);
+}
+
+.tweet-container footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.tweet-container footer p {
+  margin: 0;
+  padding: 10px 30px;
+  font-size: 16px;
+}
+
+.tweet-container .tweet-buttons {
+  color: #4056A1;
+  font-size: 16px;
+  padding: 5px 40px;
+}
+
+.tweet-container .tweet-buttons ion-icon {
+  margin-left: 6px;
+  cursor: pointer;
+}

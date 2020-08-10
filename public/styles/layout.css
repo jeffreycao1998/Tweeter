@@ -19,6 +19,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  position: relative;
 }
 
 /*
@@ -28,6 +29,7 @@ body {
 main {
   background-color: #f4f1ec;
   width: 90%;
-  height: 100vh;
   margin: 0 auto;
+  padding-bottom: 50px;
 }
+
