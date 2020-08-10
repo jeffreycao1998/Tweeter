@@ -1,0 +1,16 @@
+header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(211, 144, 20);
+  background-image: url('../images/concrete-wall.png');
+  color: white;
+}
+
+.header-name {
+  font-weight: 400;
+  margin: 0;
+}
