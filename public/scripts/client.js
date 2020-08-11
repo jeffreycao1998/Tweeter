@@ -56,7 +56,7 @@ $(document).ready( () => {
           <ion-icon name="heart"></ion-icon>
         </div>
       </footer>
-    </div>`
+    </div>`;
 
     return tweetHTML;
   };
@@ -72,7 +72,7 @@ $(document).ready( () => {
 
     if (tweetLength === 0 || tweetLength > 140) {
       tweetError.text('⚠️Too long. Plz rspct our arbitrary limit of 140 chars. #kthxbye.⚠️');
-      tweetError.slideDown('slow')
+      tweetError.slideDown('slow');
       return;
     }
 
@@ -81,7 +81,7 @@ $(document).ready( () => {
     })
     .then((res) => {
       renderTweets([res]);
-    })
+    });
   });
 
   // Toggles form
