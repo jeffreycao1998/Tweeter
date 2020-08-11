@@ -1,24 +1,37 @@
 .tweet-container {
   min-height: 100px;
   width: 100%;
-  border: 5px solid rgb(88, 72, 65);
+  border: 5px solid #584841;
   margin-top: 40px;
   font-weight: 300;
-  filter: blur(.5px);
+  -webkit-filter: blur(0.5px);
+          filter: blur(0.5px);
 }
 
 .tweet-container header {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 25px 20px;
 }
 
 .tweet-container header .username {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .tweet-container header .username img {
@@ -41,16 +54,22 @@
 .tweet-container .tweet {
   margin: 0 15px;
   padding: 0px 20px 30px 20px;
-  border-bottom: 4px solid rgb(88, 72, 65);
+  border-bottom: 4px solid #584841;
   font-size: 24px;
-  color: rgb(88, 72, 65);
+  color: #584841;
   word-break: break-all;
 }
 
 .tweet-container footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-bottom: 10px;
 }
 
@@ -72,11 +91,13 @@
 }
 
 .tweet-container:hover {
-  box-shadow: 10px 10px rgb(189, 189, 207);
+  -webkit-box-shadow: 10px 10px #bdbdcf;
+          box-shadow: 10px 10px #bdbdcf;
 }
 
 .tweet-container:hover {
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
 .tweet-container:hover .username p {
@@ -92,9 +113,10 @@
 }
 
 .tweet-container:hover .tweeter-handler {
-  color: rgb(189, 189, 207);
+  color: #bdbdcf;
 }
 
 .tweet-container:hover .tweet-buttons ion-icon {
   color: #4056A1;
 }
+/*# sourceMappingURL=tweet.css.map */

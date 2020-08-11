@@ -1,0 +1,33 @@
+nav {
+  @include flex-space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  padding: 0 1.5em;
+  background-color: $colorYellowBg;
+  background-image: url('../images/concrete-wall.png');
+
+  .nav-logo{
+    font-family: 'Bungee', cursive;
+    color: #FFFFFF;
+  }
+
+  .toggle-form{
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+
+    p {
+      color: white;
+      margin: 0;
+    }
+
+    ion-icon {
+      color: $colorRed;
+      font-weight: 600;
+    }
+  }
+}

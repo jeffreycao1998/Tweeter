@@ -4,14 +4,15 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready( () => {
+
+  // GETs tweets from server database
   const loadTweets = () => {
     jQuery.get('http://localhost:8080/tweets/', function(tweets) {
       renderTweets(tweets);
     });
   };
 
-  loadTweets();
-
+  // Appends new tweets to top of list of tweets
   const renderTweets = (tweetsArray) => {
     tweetsArray.forEach(tweet => {
       const previousTweets = $('#tweets-container').html();
@@ -21,12 +22,14 @@ $(document).ready( () => {
     });
   };
 
+  // Ensures embedded HTML/JS gets read as plain text
   const escape = (str) => {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  // Returns a tweet object filled with all of it's associated data
   const createTweetElement = (tweet) => {
     const name = tweet.user.name;
     const avatarUrl = tweet.user.avatars;
@@ -58,6 +61,7 @@ $(document).ready( () => {
     return tweetHTML;
   };
 
+  // Submits a new tweet to server if passes character count and renders it to the page
   $('.submit-tweet').on('click', function(event) {
     event.preventDefault();
     const tweet = $('#tweet-input').val();
@@ -67,7 +71,6 @@ $(document).ready( () => {
 
 
     if (tweetLength === 0 || tweetLength > 140) {
-      // tweetError.css('display', 'inline-block');
       tweetError.text('⚠️Too long. Plz rspct our arbitrary limit of 140 chars. #kthxbye.⚠️');
       tweetError.slideDown("slow", function() {
         console.log('animation');
@@ -83,6 +86,7 @@ $(document).ready( () => {
     })
   });
 
+  // Toggles form
   $('.toggle-form').on('click', () => {
     if ($('.new-tweet').css('display') === 'none') {
       $('.new-tweet').slideDown('slow');
@@ -91,4 +95,6 @@ $(document).ready( () => {
     }
   });
 
+
+  loadTweets();
 });

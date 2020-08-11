@@ -1,16 +1,27 @@
 .main-header {
   height: 400px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(211, 144, 20);
-  background-image: url('../images/concrete-wall.png');
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #d39014;
+  background-image: url("../images/concrete-wall.png");
   color: white;
+  margin-top: 80px;
 }
 
 .header-name {
   font-weight: 400;
   margin: 0;
 }
+/*# sourceMappingURL=header.css.map */

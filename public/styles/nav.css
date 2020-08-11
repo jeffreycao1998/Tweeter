@@ -1,34 +1,42 @@
 nav {
-  height: 80px;
-  width: 100vw;
-  padding: 0 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
   top: 0;
-  z-index: 99;
-  background-color: rgb(211, 144, 20);
-  background-image: url('../images/concrete-wall.png');
+  left: 0;
+  height: 80px;
+  width: 100%;
+  padding: 0 1.5em;
+  background-color: #d39014;
+  background-image: url("../images/concrete-wall.png");
 }
 
-.nav-logo {
+nav .nav-logo {
   font-family: 'Bungee', cursive;
   color: #FFFFFF;
 }
 
-.toggle-form {
+nav .toggle-form {
   color: white;
   font-size: 18px;
   text-align: center;
   cursor: pointer;
 }
 
-.toggle-form p {
+nav .toggle-form p {
   color: white;
   margin: 0;
 }
 
-.toggle-form ion-icon {
-  color: rgb(202, 18, 18);
+nav .toggle-form ion-icon {
+  color: #ca1212;
   font-weight: 600;
 }
+/*# sourceMappingURL=nav.css.map */

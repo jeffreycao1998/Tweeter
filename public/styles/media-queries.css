@@ -21,5 +21,6 @@
     left: 0;
     background-image: none;
     background-color: #4056A1;
+    z-index: 99;
   }
 }

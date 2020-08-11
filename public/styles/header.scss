@@ -1,0 +1,15 @@
+.main-header {
+  @include flex-center;
+  height: 400px;
+  width: 100%;
+  flex-direction: column;
+  background-color: $colorYellowBg;
+  background-image: url('../images/concrete-wall.png');
+  color: white;
+  margin-top: 80px;
+
+  .header-name {
+    font-weight: 400;
+    margin: 0;
+  }
+}
