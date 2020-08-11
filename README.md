@@ -14,7 +14,7 @@ If you came for the sole purpose of reading tweets you may toggle the form out o
 
 Are you on a phone? Well luckily Tweeter was built mobile first to ensure the best mobile experience possible.
 
-![""](https://github.com/jeffreycao1998/Tweeter/blob/master/docs/tweeter3.png?raw=true)
+(https://github.com/jeffreycao1998/Tweeter/blob/master/docs/tweeter3.png?raw=true)
 
 ## Getting Started
 
