@@ -1,9 +1,10 @@
-article.tweet-container {
+.tweet-container {
   min-height: 100px;
   width: 100%;
   border: 5px solid rgb(88, 72, 65);
   margin-top: 40px;
   font-weight: 300;
+  filter: blur(.5px);
 }
 
 .tweet-container header {
@@ -20,7 +21,7 @@ article.tweet-container {
   align-items: center;
 }
 
-.tweet-container header .username ion-icon {
+.tweet-container header .username img {
   margin-right: 10px;
   width: 60px;
   height: 60px;
@@ -43,6 +44,7 @@ article.tweet-container {
   border-bottom: 4px solid rgb(88, 72, 65);
   font-size: 24px;
   color: rgb(88, 72, 65);
+  word-break: break-all;
 }
 
 .tweet-container footer {
@@ -59,7 +61,7 @@ article.tweet-container {
 }
 
 .tweet-container .tweet-buttons {
-  color: #4056A1;
+  color: #5570b6;
   font-size: 16px;
   padding: 5px 40px;
 }
@@ -67,4 +69,32 @@ article.tweet-container {
 .tweet-container .tweet-buttons ion-icon {
   margin-left: 6px;
   cursor: pointer;
+}
+
+.tweet-container:hover {
+  box-shadow: 10px 10px rgb(189, 189, 207);
+}
+
+.tweet-container:hover {
+  filter: none;
+}
+
+.tweet-container:hover .username p {
+  color: black;
+}
+
+.tweet-container:hover .tweet {
+  color: black;
+}
+
+.tweet-container:hover footer p {
+  color: black;
+}
+
+.tweet-container:hover .tweeter-handler {
+  color: rgb(189, 189, 207);
+}
+
+.tweet-container:hover .tweet-buttons ion-icon {
+  color: #4056A1;
 }

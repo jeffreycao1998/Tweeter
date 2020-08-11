@@ -1,0 +1,20 @@
+.scroll-top {
+  height: 0;
+  width: 60px;
+  border-radius: 50%;
+  background-color: rgb(202, 18, 18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  transition: opacity .4s ease-in-out, height .2s ease-in-out;
+}
+
+.scroll-top:hover {
+  background-color: rgb(252, 10, 10);
+  cursor: pointer;
+}

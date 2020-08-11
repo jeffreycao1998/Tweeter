@@ -1,0 +1,25 @@
+@media (min-width: 1024px) {
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 130px;
+  }
+
+  .main-header {
+    width: 30%;
+    margin: 30px;
+  }
+
+  main {
+    width: 50%;
+    margin-right: 30px;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: none;
+    background-color: #4056A1;
+  }
+}

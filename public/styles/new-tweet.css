@@ -1,5 +1,6 @@
 .new-tweet {
   width: 100%;
+  margin-top: 30px;
 }
 
 .new-tweet h2{
@@ -29,13 +30,28 @@
   border-bottom: 5px solid rgb(88, 72, 65);
 }
 
-.tweet-button-container {
+.new-tweet-footer {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
 }
 
-.tweet-button-container output {
+.new-tweet-button {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-error-message {
+  width: 100%;
+  font-size: 16px;
+  color: rgb(202, 18, 18);
+  padding: 10px;
+  border: 3px solid rgb(202, 18, 18);
+  margin-bottom: 20px;
+  display: none;
+}
+
+.new-tweet-footer output {
   font-family: 'Bungee';
   color: rgb(88, 72, 65);
 }
@@ -51,5 +67,13 @@
 }
 
 .submit-tweet:active {
+  transform: translate(0, 2px);
+}
+
+.submit-tweet:hover {
+  background-color: #4050A1;
+}
+
+.submit-tweet:focus {
   outline: none;
 }
