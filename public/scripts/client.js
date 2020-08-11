@@ -72,9 +72,7 @@ $(document).ready( () => {
 
     if (tweetLength === 0 || tweetLength > 140) {
       tweetError.text('⚠️Too long. Plz rspct our arbitrary limit of 140 chars. #kthxbye.⚠️');
-      tweetError.slideDown("slow", function() {
-        console.log('animation');
-      });
+      tweetError.slideDown('slow')
       return;
     }
 
@@ -94,7 +92,6 @@ $(document).ready( () => {
       $('.new-tweet').slideUp('slow');
     }
   });
-
 
   loadTweets();
 });
