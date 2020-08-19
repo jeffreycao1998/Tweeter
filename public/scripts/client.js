@@ -4,23 +4,16 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready( () => {
+  const tweetInput = $('#tweet-input')
+  const tweetMessage = tweetInput.val()
+  const tweetLength = tweetInput.length;
+  const tweetError = $('.tweet-error-message');
 
-  // GETs tweets from server database
-  const loadTweets = () => {
-    jQuery.get('http://localhost:8080/tweets/', function(tweets) {
-      renderTweets(tweets);
-    });
-  };
+  const calculateDaysSince = (previousDate) => {
+    const date = Date.now();
 
-  // Appends new tweets to top of list of tweets
-  const renderTweets = (tweetsArray) => {
-    tweetsArray.forEach(tweet => {
-      const previousTweets = $('#tweets-container').html();
-      const newTweet = createTweetElement(tweet);
-
-      $('#tweets-container').html(newTweet + previousTweets);
-    });
-  };
+    return Math.round((date - previousDate) / 1000 / 60 / 60 / 24);
+  }
 
   // Ensures embedded HTML/JS gets read as plain text
   const escape = (str) => {
@@ -36,7 +29,7 @@ $(document).ready( () => {
     const handle = tweet.user.handle;
     const content = tweet.content.text;
     const dateCreated = tweet.created_at;
-    const date = Date.now();
+    const daysAgo = calculateDaysSince(dateCreated);
 
     const tweetHTML = 
     `<div class="tweet-container">
@@ -49,7 +42,7 @@ $(document).ready( () => {
       </header>
       <p class="tweet">${escape(content)}</p>
       <footer>
-        <p>${Math.round((date - dateCreated) / 1000 / 60 / 60 / 24)} days ago</p>
+        <p>${daysAgo} days ago</p>
         <div class="tweet-buttons">
           <ion-icon name="flag"></ion-icon>
           <ion-icon name="repeat"></ion-icon>
@@ -61,20 +54,63 @@ $(document).ready( () => {
     return tweetHTML;
   };
 
+  // Appends new tweets to top of list of tweets
+  const renderTweets = (tweetsArray) => {
+    tweetsArray.forEach(tweet => {
+      const newTweet = createTweetElement(tweet);
+      $('#tweets-container').prepend(newTweet);
+    });
+  };
+
+  // GETs tweets from server database
+  const loadTweets = () => {
+    jQuery.get('http://localhost:8080/tweets/', function(tweets) {
+      renderTweets(tweets);
+    });
+  };
+
+  const tweetErrorTimeouts = [];
+
+  // resets timeout countdown
+  const resetTimeout = () => {
+    const timeout = setTimeout(() => {
+      tweetError.slideUp('slow');
+    }, 4000);
+
+    if (tweetErrorTimeouts.length === 0) {
+      tweetErrorTimeouts.push(timeout);
+    } else {
+      clearTimeout(tweetErrorTimeouts[0])
+      tweetErrorTimeouts.shift();
+      tweetErrorTimeouts.push(timeout);
+    }
+  }
+
+  // shows error message if tweet is too short/long
+  const tweetIsLongEnough = () => {
+    
+    if (tweetLength === 0) {
+      tweetError.text('Tweet too short! Go on, write your story to the world!');
+      tweetError.slideDown('slow');
+
+      resetTimeout();
+      return false;
+
+    } else if (tweetLength > 140) {
+      tweetError.text('TMI, cut your story down a bit!');
+      tweetError.slideDown('slow');
+
+      resetTimeout();
+      return false;
+    }
+    return true;
+  }
+
   // Submits a new tweet to server if passes character count and renders it to the page
   $('.submit-tweet').on('click', function(event) {
     event.preventDefault();
-    const tweet = $('#tweet-input').val();
-    const tweetError = $('.tweet-error-message');
-    const tweetLength = tweet.length;
 
-
-
-    if (tweetLength === 0 || tweetLength > 140) {
-      tweetError.text('⚠️Too long. Plz rspct our arbitrary limit of 140 chars. #kthxbye.⚠️');
-      tweetError.slideDown('slow');
-      return;
-    }
+    if (!tweetIsLongEnough()) return;
 
     jQuery.post('http://localhost:8080/tweets/', { 
       text: $('#tweet-input').val(),
@@ -88,6 +124,7 @@ $(document).ready( () => {
   $('.toggle-form').on('click', () => {
     if ($('.new-tweet').css('display') === 'none') {
       $('.new-tweet').slideDown('slow');
+      tweetInput.focus();
     } else {
       $('.new-tweet').slideUp('slow');
     }

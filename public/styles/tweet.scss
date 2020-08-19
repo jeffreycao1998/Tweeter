@@ -1,3 +1,26 @@
+// Colors
+$colorRed: rgb(202, 18, 18);
+$colorYellowBg: rgb(211, 144, 20);
+$colorGreyBg: #f4f1ec;
+$colorGrey: rgb(189, 189, 207);
+$colorBrown: rgb(88, 72, 65);
+$colorBlue: #4050A1;
+$colorLightBlue: #5570b6;
+
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .tweet-container {
   min-height: 100px;
   width: 100%;
